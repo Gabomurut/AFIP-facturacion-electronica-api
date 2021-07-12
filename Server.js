@@ -1,8 +1,3 @@
-const Afip = require('@afipsdk/afip.js');
-const { Console } = require('console');
-const afip = new Afip({ CUIT: 30715270079 });
-
-const crearFactura = require('./src/service/facturaService');
 
 var express = require('express')
 var http = require('http')
