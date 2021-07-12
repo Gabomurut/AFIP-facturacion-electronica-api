@@ -6,7 +6,9 @@ var app = express()
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-http.createServer(app).listen(8001, () => {
+var port = process.env.PORT || 8001;
+
+http.createServer(app).listen(port, () => {
   console.log('Server started at http://localhost:8001');
 });
 
