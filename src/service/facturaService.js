@@ -1,9 +1,18 @@
 
 const Afip = require('@afipsdk/afip.js');
-const afip = new Afip({ CUIT: 30715270079 });
+const afip = new Afip({
+    CUIT: 30715270079,
+    //access_token: 'Tu3Rq85oMBk3ZQ2IfabD64GMF4dAAsqH8zQGbXuDbnXkjFyeI3aAz1ImU4NgLO59',
+    production: true,
+    ta_folder: 'src/certs',
+    res_folder: 'src/certs',
+    cert: 'cert',
+    key: 'key',
+
+});
 
 
-//Crear siguiente factura 
+//Crear siguiente factura
 async function crearFactura(req) {
     const voucher = await afip.ElectronicBilling.createNextVoucher(req.body);
     return voucher;
