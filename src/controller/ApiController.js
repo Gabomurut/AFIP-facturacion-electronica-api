@@ -16,7 +16,7 @@ const apiController = {
 
     serverStatus: async (req, res) => {
         const serverStatus = await facturaService.getServerStatus();
-        res.status(200).send(serverStatus);
+        res.status(200).send(serverStatus.FEDummyResult);
     },
 
     dateTransform: (req, res) => {

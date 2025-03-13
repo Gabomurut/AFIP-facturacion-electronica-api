@@ -11,6 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "@afipsdk/afip.js": "^0.7.1",
+    "afip.ts": "^3.2.2",
     "body-parser": "^1.19.0",
     "express": "^4.17.1"
   }
