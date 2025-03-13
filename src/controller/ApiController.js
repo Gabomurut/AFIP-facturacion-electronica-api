@@ -42,6 +42,10 @@ const apiController = {
     getCurrenciesTypes: async (req, res) => {
         const currenciesTypes = await facturaService.getCurrenciesTypes();
         res.status(200).send(currenciesTypes);
+    },
+
+    getHealth: async (req, res) => {
+        res.status(200).send('HEALTH OK');
     }
 };
 

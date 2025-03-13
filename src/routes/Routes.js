@@ -10,6 +10,7 @@ router.get('/tiposFactura', apiController.getTiposFactura);
 router.get('/conceptTypes', apiController.getConceptTypes);
 router.get('/documentTypes', apiController.getDocumentTypes);
 router.get('/currencies', apiController.getCurrenciesTypes);
+route.get('/health', apiController.getHealth);
 
 router.post('/createVoucher', apiController.createFactura);
 router.post('/dateTransform', apiController.dateTransform);
