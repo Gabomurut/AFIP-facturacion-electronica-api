@@ -117,10 +117,6 @@ function getDate(date) {
     return dateFormatted;
 }
 
-export async function getServerStatus() {
-    return await afip.electronicBillingService.getServerStatus();
-}
-
 // Al final del archivo, reemplazar los export individuales por:
 module.exports = {
   crearFactura,
