@@ -8,11 +8,15 @@ const apiController = {
         res.status(200).send(factura);
     },
 
-    createFactura: async (req, res) => {
+createFactura: async (req, res) => {
+    try {
         const nuevaFactura = await facturaService.crearFactura(req);
-        res.status(201).send(nuevaFactura);
-        
-    },
+        res.status(201).json(nuevaFactura);
+    } catch (error) {
+        console.error('Error createFactura:', error.message);
+        res.status(500).json({ error: error.message });
+    }
+},
 
     serverStatus: async (req, res) => {
         const serverStatus = await facturaService.getServerStatus();
