@@ -117,19 +117,8 @@ function getDate(date) {
     return dateFormatted;
 }
 
-// Al final del archivo, reemplazar los export individuales por:
-module.exports = {
-  crearFactura,
-  getFactura,
-  getSalesPoints,
-  getVoucherTypes,
-  getConceptTypes,
-  getDocumentTypes,
-  getAliquotTypes,
-  getCurrenciesTypes,
-  getOptionsTypes,
-  getTaxTypes,
-  getDate,
-  getServerStatus,
+//Obtener estado del servidor
+export async function getServerStatus() {
+    return await afip.electronicBillingService.getServerStatus();
 }
 
