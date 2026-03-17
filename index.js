@@ -8,8 +8,8 @@ app.use(express.urlencoded({ extended: true }));
 
 var port = process.env.PORT || 8001;
 
-http.createServer(app).listen(port, () => {
-  console.log('Server started at http://localhost:8001');
+http.createServer(app).listen(port, '0.0.0.0', () => {
+  console.log(`Server started at http://0.0.0.0:${port}`);
 });
 
 const apiRouter = require('./src/routes/Routes.js');
