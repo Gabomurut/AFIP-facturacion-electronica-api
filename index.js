@@ -6,7 +6,7 @@ var app = express()
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-var port = process.env.PORT || 8001;
+var port = process.env.PORT || 8080;
 
 http.createServer(app).listen(port, '0.0.0.0', () => {
   console.log(`Server started at http://0.0.0.0:${port}`);
