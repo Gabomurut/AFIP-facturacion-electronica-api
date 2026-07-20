@@ -10,7 +10,7 @@ router.get('/tiposFactura', apiController.getTiposFactura);
 router.get('/conceptTypes', apiController.getConceptTypes);
 router.get('/documentTypes', apiController.getDocumentTypes);
 router.get('/currencies', apiController.getCurrenciesTypes);
-router.get('getTaxPayerDetails', apiController.getTaxpayerDetails);
+router.get('/taxPayerDetails', apiController.getTaxpayerDetails);
 router.get('/health', apiController.getHealth);
 
 router.post('/createVoucher', apiController.createFactura);
