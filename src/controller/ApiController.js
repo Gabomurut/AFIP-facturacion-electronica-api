@@ -53,8 +53,23 @@ const apiController = {
     },
 
     getTaxpayerDetails: async (req, res) => {
-        const taxpayerDetails = await facturaService.getTaxpayerDetails(req.body.cuit)
-        res.status(200).send(taxpayerDetails);
+        try {
+            const { cuit } = req.query;
+
+            if (!cuit) {
+                return res.status(400).json({
+                    error: "El parámetro 'cuit' es obligatorio."
+                });
+            }
+
+            const taxpayerDetails = await facturaService.getTaxpayerDetails(cuit);
+
+            return res.status(200).json(taxpayerDetails);
+        } catch (error) {
+            return res.status(500).json({
+                error: error.message
+            });
+        }
     }
 };
 
