@@ -44,7 +44,7 @@ function getDate(date) {
 }
 
 async function getTaxpayerDetails(taxId) {
-    return afip.RegisterScopeTen.getTaxpayerDetails(taxId)
+    return afip.RegisterScopeThirteen.getTaxpayerDetails(taxId)
 }
 
 module.exports = {
