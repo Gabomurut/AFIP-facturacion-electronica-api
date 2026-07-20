@@ -43,6 +43,10 @@ function getDate(date) {
     return afip.ElectronicBilling.formatDate(date);
 }
 
+async function getTaxpayerDetails(taxId) {
+    return afip.RegisterScopeTen.getTaxpayerDetails(taxId)
+}
+
 module.exports = {
     crearFactura,
     getFactura,
@@ -52,4 +56,5 @@ module.exports = {
     getCurrenciesTypes,
     getServerStatus,
     getDate,
+    getTaxpayerDetails,
 };

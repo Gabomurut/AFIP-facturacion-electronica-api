@@ -8,7 +8,7 @@ const apiController = {
         res.status(200).send(factura);
     },
 
-createFactura: async (req, res) => {
+    createFactura: async (req, res) => {
     try {
         const nuevaFactura = await facturaService.crearFactura(req);
         res.status(201).json(nuevaFactura);
@@ -16,7 +16,7 @@ createFactura: async (req, res) => {
         console.error('Error createFactura:', error.message);
         res.status(500).json({ error: error.message });
     }
-},
+    },
 
     serverStatus: async (req, res) => {
         const serverStatus = await facturaService.getServerStatus();
@@ -50,6 +50,11 @@ createFactura: async (req, res) => {
 
     getHealth: async (req, res) => {
         res.status(200).send('HEALTH OK');
+    },
+
+    getTaxpayerDetails: async (req, res) => {
+        const taxpayerDetails = await facturaService.getTaxpayerDetails(req.body.cuit)
+        res.status(200).send(taxpayerDetails);
     }
 };
 
